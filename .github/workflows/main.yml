@@ -2,7 +2,7 @@ name: Build & Deploy
 on: 
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     uses: terafin/workflows/.github/workflows/build-and-deploy.yml@main
