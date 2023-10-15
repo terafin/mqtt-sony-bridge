@@ -38,7 +38,7 @@ sony.on('inputChanged', (zone, inputName) => {
 })
 sony.on('zoneStatusChanged', (zone, status) => {
     logging.info('zone status changed: ' + zone + ' status: ' + status)
-    publish('zone_' + zone, status)
+    publish('zone_' + zone + '/power', status)
 })
 
 const mqtt = mqtt_helpers.setupClient(function () {
