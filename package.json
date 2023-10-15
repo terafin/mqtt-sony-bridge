@@ -1,0 +1,23 @@
+{
+    "name": "mqtt-sony-bridge",
+    "version": "0.0.1",
+    "description": "MQTT <-> Sony AVR bridge",
+    "license": "MIT",
+    "main": "index.js",
+    "repository": {
+        "url": "https://github.com/terafin/mqtt-sony-bridge.js"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "homeautomation-js-lib": "https://github.com/terafin/homeautomation-js-lib.git",
+        "lodash": "latest",
+        "mqtt": "latest",
+        "got": "^11.0.0",
+        "ws": "latest"
+    },
+    "engines": {
+        "node": ">=4"
+    }
+}
