@@ -1,4 +1,4 @@
-# mqtt-denon-bridge
+# mqtt-sony-bridge
 
 This is a simple docker container that I use to bridge to/from my MQTT bridge.
 
@@ -20,14 +20,14 @@ For changing states '/set' commands also work, eg:
 publish this to turn on the receiver
 
 ```
-   topic: /living_room/denon/set/power
+   topic: /living_room/sony/set/power
    value: 1
 ```
 
 publish this to change the input to "Game"
 
 ```
-   topic: /living_room/denon/set/input
+   topic: /living_room/sony/set/input
    value: game
 ```
 
@@ -37,12 +37,12 @@ Here's an example docker compose:
 version: '3.3'
 services:
   mqtt-cyberpower-bridge:
-    image: ghcr.io/terafin/mqtt-denon-bridge:latest
+    image: ghcr.io/terafin/mqtt-sony-bridge:latest
     environment:
-      LOGGING_NAME: mqtt-denon-bridge
+      LOGGING_NAME: mqtt-sony-bridge
       TZ: America/Los_Angeles
       TOPIC_PREFIX: /your_topic_prefix  (eg: /living_room/cabinet/sonos)
-      AVR_IP: YOUR_DENON_IP
+      AVR_IP: YOUR_sony_IP
       AVR_PORT: "23"
       MQTT_HOST: YOUR_MQTT_URL (eg: mqtt://mqtt.yourdomain.net)
       (OPTIONAL) MQTT_USER: YOUR_MQTT_USERNAME
@@ -52,8 +52,8 @@ services:
 Here's an example publish for my setup:
 
 ```
-/living_room/denon/power 1
-/living_room/denon/input mplay
-/living_room/denon/volume 50.5
-/living_room/denon/mute 0
+/living_room/sony/power 1
+/living_room/sony/input mplay
+/living_room/sony/volume 50.5
+/living_room/sony/mute 0
 ```
