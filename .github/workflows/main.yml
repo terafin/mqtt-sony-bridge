@@ -1,8 +1,13 @@
 name: Build & Deploy
+
 on: 
   push:
     branches:
       - main
+
+permissions:
+  packages: write
+
 jobs:
   build:
     uses: terafin/workflows/.github/workflows/build-and-deploy.yml@main
